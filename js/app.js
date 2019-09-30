@@ -9,7 +9,6 @@
         </ul>
 </section> */
 
-// 2. Calculate and store the simulated amounts of cookies purchased for each hour at each location using average cookies purchased and the random number of customers generated
 
 var seattle = {
   minHourlyCustomers: 23,
@@ -23,7 +22,58 @@ var seattle = {
   }
 };
 
-console.log(seattle.simulatedCookieAmount());
+var tokyo = {
+  minHourlyCustomers: 3,
+  maxHourlyCustomers: 24,
+  avgCookiesPerCust: 1.2,
+  randomNumOfCustomers: function(){
+    return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers + 1) + this.minHourlyCustomers);
+  },
+  simulatedCookieAmount: function(){
+    return Math.round(this.randomNumOfCustomers() * this.avgCookiesPerCust);
+  }
+};
+
+var dubai = {
+  minHourlyCustomers: 11,
+  maxHourlyCustomers: 38,
+  avgCookiesPerCust: 3.7,
+  randomNumOfCustomers: function(){
+    return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers + 1) + this.minHourlyCustomers);
+  },
+  simulatedCookieAmount: function(){
+    return Math.round(this.randomNumOfCustomers() * this.avgCookiesPerCust);
+  }
+};
+
+var paris = {
+  minHourlyCustomers: 20,
+  maxHourlyCustomers: 38,
+  avgCookiesPerCust: 2.3,
+  randomNumOfCustomers: function(){
+    return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers + 1) + this.minHourlyCustomers);
+  },
+  simulatedCookieAmount: function(){
+    return Math.round(this.randomNumOfCustomers() * this.avgCookiesPerCust);
+  }
+};
+
+var lima = {
+  minHourlyCustomers: 2,
+  maxHourlyCustomers: 16,
+  avgCookiesPerCust: 4.6,
+  randomNumOfCustomers: function(){
+    return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers + 1) + this.minHourlyCustomers);
+  },
+  simulatedCookieAmount: function(){
+    return Math.round(this.randomNumOfCustomers() * this.avgCookiesPerCust);
+  }
+};
+
+var hourlyCookiesSold = [seattle.simulatedCookieAmount(), tokyo.simulatedCookieAmount(), dubai.simulatedCookieAmount(), paris.simulatedCookieAmount(), lima.simulatedCookieAmount()];
+
+console.log(hourlyCookiesSold);
+
 
 
 //   // --- var simulatedCookieAmount = avgCookiesPerCust * seattle.randomNumOfCustomers();
