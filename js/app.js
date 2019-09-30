@@ -1,6 +1,6 @@
 'use strict';
 
-/* <section id="locationinfo">
+/* <section id="locationinfo"> <<< US JS TO ADD THIS ID 
         <h1>storename</h1>
         <ul>
           <li></li>
@@ -74,9 +74,12 @@ var hourlyCookiesSold = [seattle.simulatedCookieAmount(), tokyo.simulatedCookieA
 
 console.log(hourlyCookiesSold);
 
+//gets section element that has id of cookiesales
+var cookieSalesByHour = document.getElementById('cookiesales');
+//creates an h1 element, gives it the id of storename, and adds text to it
+var storename = document.createElement('h1');
+storename.setAttribute('id', 'storename');
+storename.textContent = 'Seattle';
+//makes the h1 element a child of the section element
+cookieSalesByHour.appendChild(storename);
 
-
-//   // --- var simulatedCookieAmount = avgCookiesPerCust * seattle.randomNumOfCustomers();
-// // --- "Store the results for each location in a separate array… perhaps as a property of the object representing that location"
-// // --- var cookiesSoldSeattle = [   ]
-// // --- "Display the values of each array as unordered lists in the browser"
