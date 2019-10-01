@@ -1,13 +1,9 @@
 * {
   margin: 50px 0px 0px 50px;
   list-style-position: inside;
-  background-color: pink;
+  background-color: salmon;
 }
 
 ul {
   list-style-type: square;
-}
-
-#storename {
-  color: red;
 }
