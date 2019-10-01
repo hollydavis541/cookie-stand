@@ -15,7 +15,7 @@ var seattle = {
     var hourlyCookies = [];
     //loops through the storeHours array (really just to use it's length which is 14) and runs the calculation to get the total hourly amount of cookies--pushes that amount into the empty array created above
     for (var i = 0; i < this.storeHours.length; i++) {
-      hourlyCookies.push(Math.round(this.randomNumOfCustomers() * this.avgCookiesPerCust)); 
+      hourlyCookies.push(Math.round(this.randomNumOfCustomers() * this.avgCookiesPerCust));
     }
     return hourlyCookies;
   },
@@ -24,60 +24,37 @@ var seattle = {
     for (var i = 0; i <= this.storeHours.length; i++) {
       totalDailyCookies += this.simulatedCookieAmount()[0];
     }
-    //toLocaleString converts it to a number that has a comma in it if it's in the thousands 
+    //toLocaleString converts it to a number that has a comma in it if it's in the thousands
     return totalDailyCookies.toLocaleString();
   },
+  render: function() {
+    //gets section element that has id of cookiesales
+    var cookieSalesByHour = document.getElementById('cookiesales');
+    //creates an h1 element, gives it the id of storename, and adds text to it
+    var storename = document.createElement('h1');
+    storename.setAttribute('id', 'storename');
+    storename.textContent = `${this.location}`;
+    //makes the h1 element a child of the section element
+    cookieSalesByHour.appendChild(storename);
+    //creates unordered list element, gives it the class of cookiesperhour, and makes it a child of the h1 element above
+    var cookiesSoldPerHour = document.createElement('ul');
+    cookiesSoldPerHour.setAttribute('class', 'cookiesperhour');
+    storename.appendChild(cookiesSoldPerHour);
+    // creates a list item for each store hour
+    for (var i = 0; i < this.storeHours.length; i++) {
+      var li = document.createElement('li');
+      li.textContent = `${this.storeHours[i]}: ${this.simulatedCookieAmount()[i]} cookies`;
+      cookiesSoldPerHour.appendChild(li);
+    }
+    //creating a final list item to show the total using the totalSum method within this object
+    li.textContent = `Total: ${this.total()} cookies`;
+    cookiesSoldPerHour.appendChild(li);
+  }
 };
 
 console.log(seattle.randomNumOfCustomers());
 console.log(seattle.simulatedCookieAmount());
 console.log(seattle.total());
 
+seattle.render();
 
-// var hourlyCookiesSold = [seattle.simulatedCookieAmount(), tokyo.simulatedCookieAmount(), dubai.simulatedCookieAmount(), paris.simulatedCookieAmount(), lima.simulatedCookieAmount()];
-
-
-//put the code below into a rendering function
-//gets section element that has id of cookiesales
-var cookieSalesByHour = document.getElementById('cookiesales');
-//creates an h1 element, gives it the id of storename, and adds text to it
-var storename = document.createElement('h1');
-storename.setAttribute('id', 'storename');
-storename.textContent = 'Seattle';
-//makes the h1 element a child of the section element
-cookieSalesByHour.appendChild(storename);
-//creates unordered list element, gives it the class of cookiesperhour, and makes it a child of the h1 element above
-var cookiesSoldPerHour = document.createElement('ul');
-cookiesSoldPerHour.setAttribute('class', 'cookiesperhour');
-storename.appendChild(cookiesSoldPerHour);
-//creates a list item element and makes it a child of the ul element above
-var cookieListItem = document.createElement('li');
-cookieListItem.textContent = 'placeholder';
-cookiesSoldPerHour.appendChild(cookieListItem);
-
-
-/*
-What needs to be in the list?
-- 15 list items
-- one option would be to store the times in an array
-- or one by one
-- '6am: ${PLACEHOLDER} cookies'
-- how do you repeat the creation of an element? 
-
-1. Seattle
-    * 6am: 16 cookies
-    * 7am: 20 cookies
-    * 8am: 35 cookies
-    * 9am: 48 cookies
-    * 10am: 56 cookies
-    * 11am: 77 cookies
-    * 12pm: 93 cookies
-    * 1pm: 144 cookies
-    * 2pm: 119 cookies
-    * 3pm: 84 cookies
-    * 4pm: 61 cookies
-    * 5pm: 23 cookies
-    * 6pm: 42 cookies
-    * 7pm: 57 cookies
-    * Total: 875 cookies
-*/
