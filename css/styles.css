@@ -1,13 +1,22 @@
 * {
   margin: 50px 0px 0px 50px;
   list-style-position: inside;
-  background-color: pink;
+  background-color: rgb(243, 164, 156);
+}
+
+h1 {
+  size: 2em;
+}
+
+img {
+  float: left;
 }
 
 ul {
   list-style-type: square;
 }
 
-#storename {
-  color: red;
+.nav li {
+  display: inline;
 }
+
