@@ -6,28 +6,27 @@ var seattle = {
   maxHourlyCustomers: 65,
   avgCookiesPerCust: 6.3,
   storeHours: ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'],
-  //generates a random number of customers
-  //generates a random number of customers 
   randomNumOfCustomers: function() {
-    var randomCust = Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers + 1) + this.minHourlyCustomers);
-    return randomCust;
+    return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers + 1) + this.minHourlyCustomers);
   },
   //takes that random number and multiplies it by average hourly cookie amount;
-  simulatedCookieAmount: function(){
+  simulatedCookieAmount: function() {
   //creates an empty array to store the multiplication results (I didn't figure this array step out on my own, I looked at Trevor's code)
     var hourlyCookies = [];
-    //loops through the storeHours array (really just to use it's length which is 15) and runs the calculation to get the total hourly amount of cookies--pushes that amount into the empty array created above
-    for (var i = 0; i <= this.storeHours.length; i++) {
+    //loops through the storeHours array (really just to use it's length which is 14) and runs the calculation to get the total hourly amount of cookies--pushes that amount into the empty array created above
+    for (var i = 0; i < this.storeHours.length; i++) {
       hourlyCookies.push(Math.round(this.randomNumOfCustomers() * this.avgCookiesPerCust)); 
     }
     return hourlyCookies;
   },
-  total: function(){
-  //I want to add the items from the hourlyCookies array created above together, but I'm still working on how to do this. When I try to access an item from that array, I get a "cannot read property 'O' of undefined" error
-    var totalDailyCookies = this.hourlyCookies[0];
-    return totalDailyCookies;
+  total: function() {
+    var totalDailyCookies = 0;
+    for (var i = 0; i <= this.storeHours.length; i++) {
+      totalDailyCookies += this.simulatedCookieAmount()[0];
+    }
+    //toLocaleString converts it to a number that has a comma in it if it's in the thousands 
+    return totalDailyCookies.toLocaleString();
   },
-  //finally I want to create a variable that has a string as it's value; the string needs to go through a loop where each time it accesses a value from the storeHours array AND each time it accesses a value from the hourlyCookies array create by the simulatedCookieAmount function with the output being something like the following:'${this.storeHours[i]}: ${this.hourlyCookies[i]} cookies'
 };
 
 console.log(seattle.randomNumOfCustomers());
