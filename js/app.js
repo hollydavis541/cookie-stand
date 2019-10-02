@@ -112,6 +112,7 @@ Store.prototype.render = function() {
   td01.textContent = 'Seattle';
   var td02 = document.createElement('td');
   td02.textContent = Store.hourlyCookies[0];
+  //gives me a "cannot read property '0' of undefined error"
   console.log(Store.hourlyCookies[0]);
 
 
