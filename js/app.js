@@ -2,12 +2,11 @@
 
 var storeHoursArray = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
-var Store = function(city, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCust, storeHours){
+var Store = function(city, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCust){
   this.city = city;
   this.minHourlyCustomers = minHourlyCustomers;
   this.maxHourlyCustomers = maxHourlyCustomers;
   this.avgCookiesPerCust = avgCookiesPerCust;
-  this.storeHours = storeHours;
 };
 
 Store.prototype.customerRandomizer = function() {
@@ -21,6 +20,7 @@ Store.prototype.cookiesPerHour = function() {
   }
   return hourlyCookies;
 };
+
 
 Store.prototype.cookiesPerDay = function() {
   var dailyCookies = 0;
@@ -66,7 +66,7 @@ function renderTableFooter() {
   table.appendChild(tfoot);
 
   var tr = document.createElement('tr');
-  tr.setAttribute('id','totalTarget');
+  tr.setAttribute('id','totals');
   tfoot.appendChild(tr);
 
   var th = document.createElement('th');
@@ -86,17 +86,45 @@ function renderTableFooter() {
   tr.appendChild(thHourlyTotal);
 }
 
+Store.prototype.renderSalesData = function(){
+  var table = document.getElementById('table');
+  var tr = document.createElement('tr');
+  table.appendChild(tr);
+  var th = document.createElement('th');
+  th.setAttribute('scope', 'row');
+  th.textContent = `${this.city}`;
+  tr.appendChild(th);
+  for(var i = 0; i < storeHoursArray.length; i++){
+    var td = document.createElement('td');
+    // td.textContent = `${this.hourlyCookies[i]}`;
+    td.textContent = `${this.cookiesPerHour()[i]}`;
+    // td.textContent = "hieeee";
+    // console.log()
+
+    tr.appendChild(td);
+  }
+  td = document.createElement('td');
+  td.setAttribute('class', 'total');
+  td.textContent = `${this.cookiesPerDay()[i]}`;
+  tr.appendChild(td);
+};
+
 renderTableHead();
+
+var seattle = new Store('Seattle', 23, 65, 6.3);
+seattle.renderSalesData();
+// console.log(seattle.cookiesPerHour());
+
+var tokyo = new Store('Tokyo', 3, 24, 1.2, 14, [], 0);
+tokyo.renderSalesData();
+
+var dubai = new Store('Dubai', 11, 38, 3.7, 14, [], 0);
+dubai.renderSalesData();
+
+var paris = new Store('Paris', 20, 38, 2.3, 14, [], 0);
+paris.renderSalesData();
+
+var lima = new Store('Lima', 2, 16, 4.6, 14, [], 0);
+lima.renderSalesData();
+
 renderTableFooter();
-
-
-// var seattle = new Store('Seattle', 23, 65, 6.3, storeHoursArray);
-// var tokyo = new Store('Toyko', 3, 24, 1.2, storeHoursArray);
-// var dubai = new Store('Dubai', 11, 38, 3.7, storeHoursArray);
-// var paris = new Store('Paris', 20, 38, 2.3, storeHoursArray);
-// var lima = new Store('Lima', 2, 16, 4.6, storeHoursArray);
-
-// tokyo.render();
-// dubai.render();
-// paris.render();
-// lima.render();
