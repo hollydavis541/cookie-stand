@@ -49,17 +49,15 @@ Store.prototype.cookiesPerDay = function() {
 // };
 
 Store.prototype.render = function() {
-  var section = document.getElementById('cookiesales');
-  //creates the table
   var table = document.createElement('table');
-  //creates the rows
   var row01 = document.createElement('tr');
-  var row02 = document.createElement('tr');
-  var row03 = document.createElement('tr');
-  var row04 = document.createElement('tr');
-  var row05 = document.createElement('tr');
-  var row06 = document.createElement('tr');
-  var row07 = document.createElement('tr');
+  table.appendChild(row01);
+  // var row02 = document.createElement('tr');
+  // var row03 = document.createElement('tr');
+  // var row04 = document.createElement('tr');
+  // var row05 = document.createElement('tr');
+  // var row06 = document.createElement('tr');
+  // var row07 = document.createElement('tr');
 
   // creates 15 header cells for row01
   var th01 = document.createElement('th');
@@ -92,6 +90,29 @@ Store.prototype.render = function() {
   th14.textContent = storeHoursArray[12];
   var th15 = document.createElement('th');
   th15.textContent = storeHoursArray[13];
+
+  row01.appendChild(th01);
+  row01.appendChild(th02);
+  row01.appendChild(th03);
+  row01.appendChild(th04);
+  row01.appendChild(th05);
+  row01.appendChild(th06);
+  row01.appendChild(th07);
+  row01.appendChild(th08);
+  row01.appendChild(th09);
+  row01.appendChild(th10);
+  row01.appendChild(th11);
+  row01.appendChild(th12);
+  row01.appendChild(th13);
+  row01.appendChild(th14);
+  row01.appendChild(th15);
+
+  //creates 15 cells for row02
+  var td01 = document.createElement('td');
+  td01.textContent = 'Seattle';
+  var td02 = document.createElement('td');
+  td02.textContent = Store.hourlyCookies[0];
+  console.log(Store.hourlyCookies[0]);
 
 
   // var h1 = document.createElement('h1');
