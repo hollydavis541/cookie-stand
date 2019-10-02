@@ -34,8 +34,14 @@ function renderTableHead() {
   var section = document.getElementById('cookiesales');
   var table = document.createElement('table');
   table.setAttribute ('id', 'table');
+  section.appendChild(table);
+
   var thead = document.createElement('thead');
+  table.appendChild(thead);
+
   var tr = document.createElement('tr');
+  thead.appendChild(tr);
+
   var thStore = document.createElement('th');
   thStore.setAttribute('scope','col');
   thStore.textContent = '';
@@ -49,13 +55,40 @@ function renderTableHead() {
   }
   var thStoreTotal = document.createElement('th');
   thStoreTotal.setAttribute('scope','col');
-  thStoreTotal.textContent = 'Total';
-
-  section.appendChild(table);
-  table.appendChild(thead);
-  thead.appendChild(tr);
+  thStoreTotal.textContent = 'Daily Total';
   tr.appendChild(thStoreTotal);
 }
+
+function renderTableFooter() {
+  var table = document.getElementById('table');
+
+  var tfoot = document.createElement('tfoot');
+  table.appendChild(tfoot);
+
+  var tr = document.createElement('tr');
+  tr.setAttribute('id','totalTarget');
+  tfoot.appendChild(tr);
+
+  var th = document.createElement('th');
+  th.textContent = 'Hourly Total';
+  th.setAttribute('scope', 'row');
+  tr.appendChild(th);
+
+  for(var i = 0; i < storeHoursArray.length; i++){
+    var tdHourlyTotal = document.createElement('th');
+    tdHourlyTotal.setAttribute('scope','col');
+    tdHourlyTotal.textContent = '';
+    tr.appendChild(tdHourlyTotal);
+  }
+  var thHourlyTotal = document.createElement('th');
+  thHourlyTotal.setAttribute('scope','col');
+  thHourlyTotal.textContent = '';
+  tr.appendChild(thHourlyTotal);
+}
+
+renderTableHead();
+renderTableFooter();
+
 
 // var seattle = new Store('Seattle', 23, 65, 6.3, storeHoursArray);
 // var tokyo = new Store('Toyko', 3, 24, 1.2, storeHoursArray);
@@ -63,7 +96,6 @@ function renderTableHead() {
 // var paris = new Store('Paris', 20, 38, 2.3, storeHoursArray);
 // var lima = new Store('Lima', 2, 16, 4.6, storeHoursArray);
 
-renderTableHead();
 // tokyo.render();
 // dubai.render();
 // paris.render();
