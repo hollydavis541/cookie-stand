@@ -20,3 +20,19 @@ ul {
   display: inline;
 }
 
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  text-align: left; 
+  padding: 10px;
+}
+
+thead, tfoot, th {
+  font-weight: bold;
+}
