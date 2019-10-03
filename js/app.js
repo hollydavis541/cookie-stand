@@ -2,6 +2,15 @@
 
 var storeHoursArray = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
+var storeData = [
+  ['Seattle', 23, 65, 6.3],
+  ['Tokyo', 3, 24, 1.2],
+  ['Dubai', 11, 38, 3.7],
+  ['Paris', 20, 38, 2.3],
+  ['Lima', 2, 16, 4.6]
+//need to push new store info here so that it stays after refresh
+];
+
 var Store = function(city, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCust){
   this.city = city;
   this.minHourlyCustomers = minHourlyCustomers;
@@ -107,22 +116,6 @@ Store.prototype.renderSalesData = function(){
 
 renderTableHead();
 
-//is there a dryer way to do the following 5 steps? 
-var seattle = new Store('Seattle', 23, 65, 6.3);
-seattle.renderSalesData();
-
-var tokyo = new Store('Tokyo', 3, 24, 1.2);
-tokyo.renderSalesData();
-
-var dubai = new Store('Dubai', 11, 38, 3.7);
-dubai.renderSalesData();
-
-var paris = new Store('Paris', 20, 38, 2.3);
-paris.renderSalesData();
-
-var lima = new Store('Lima', 2, 16, 4.6);
-lima.renderSalesData();
-
 renderTableFooter();
 
 var storeForm = document.getElementById('addstore');
@@ -142,17 +135,7 @@ function handleSubmit(e){
 
 (function renderAll(data){
   for(var i = 0; i < data.length; i++){
-    data[i] = new Store('test01', 'test02', 'test03', 'test04');
+    data[i] = new Store(data[i][0], data[i][1],data[i][2],data[i][3]);
     data[i].renderSalesData();
   }
-})(this.cookiesPerHour());
-
-
-//FROM DEMO//
-
-// 1) events happen no matter what (events are emitted regardless) (clock ticks)
-// --- user clicks, nothing happens
-// 2) tell code to pay attention to (listen to) an event (clock strikes 12pm)
-// --- have to attach a listener to the button element; if you don't attach a listener when user clicks no one is listening 
-// 3) tell code to handle that event (go get lunch) 
-// --- an event handler is a function (click on the button executes the function) 
+})(storeData);
