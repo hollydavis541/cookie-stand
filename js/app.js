@@ -125,8 +125,27 @@ lima.renderSalesData();
 
 renderTableFooter();
 
-//FORM//
+var storeForm = document.getElementById('addstore');
 
+storeForm.addEventListener('submit', handleSubmit);
+
+function handleSubmit(e){
+  e.preventDefault();
+  var city = e.target.city.value;
+  var mincustomers = e.target.mincustomers.value;
+  var maxcustomers = e.target.maxcustomers.value;
+  var avgcookies = e.target.avgcookies.value;
+  var newStore = new Store(city, mincustomers, maxcustomers, avgcookies);
+  newStore.renderSalesData();
+  console.log('POL');
+}
+
+(function renderAll(data){
+  for(var i = 0; i < data.length; i++){
+    data[i] = new Store('test01', 'test02', 'test03', 'test04');
+    data[i].renderSalesData();
+  }
+})(this.cookiesPerHour());
 
 
 //FROM DEMO//
@@ -137,27 +156,3 @@ renderTableFooter();
 // --- have to attach a listener to the button element; if you don't attach a listener when user clicks no one is listening 
 // 3) tell code to handle that event (go get lunch) 
 // --- an event handler is a function (click on the button executes the function) 
-
-
-var puppyForm = document.getElementById('addPuppyForm');
-
-puppyForm.addEventListener('submit', handleSubmit);
-
-function handleSubmit(event){
-  event.preventDefault();
-  var name = event.target.name.value;
-  var breed = event.target.breed.value;
-  var description = event.target.description.value;
-  var staffsay = event.target.staffsay.value;
-  var arrAdditionalInfo = [];
-
-  arrAdditionalInfo.push(event.target.isGoodWithOtherDogs.checked? 'Good with Dogs': 'Not Good With Dogs');
-  arrAdditionalInfo.push(event.target.isGoodWithCats.checked? 'Good with Cats': 'Not Good With Cats');
-  arrAdditionalInfo.push(event.target.isGoodWithKids.checked? 'Good with Kids': 'Not Good With Kids');
-  
-
-  var newPuppy = new Puppy(name, '', breed, staffsay, description, arrAdditionalInfo);
-  newPuppy.generateAge();
-  newPuppy.renderPup();
-  console.log('finished creating form dog');
-}
