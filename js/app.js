@@ -107,6 +107,7 @@ Store.prototype.renderSalesData = function(){
 
 renderTableHead();
 
+//is there a dryer way to do the following 5 steps? 
 var seattle = new Store('Seattle', 23, 65, 6.3);
 seattle.renderSalesData();
 
@@ -123,3 +124,40 @@ var lima = new Store('Lima', 2, 16, 4.6);
 lima.renderSalesData();
 
 renderTableFooter();
+
+//FORM//
+
+
+
+//FROM DEMO//
+
+// 1) events happen no matter what (events are emitted regardless) (clock ticks)
+// --- user clicks, nothing happens
+// 2) tell code to pay attention to (listen to) an event (clock strikes 12pm)
+// --- have to attach a listener to the button element; if you don't attach a listener when user clicks no one is listening 
+// 3) tell code to handle that event (go get lunch) 
+// --- an event handler is a function (click on the button executes the function) 
+
+
+var puppyForm = document.getElementById('addPuppyForm');
+
+puppyForm.addEventListener('submit', handleSubmit);
+
+function handleSubmit(event){
+  event.preventDefault();
+  var name = event.target.name.value;
+  var breed = event.target.breed.value;
+  var description = event.target.description.value;
+  var staffsay = event.target.staffsay.value;
+  var arrAdditionalInfo = [];
+
+  arrAdditionalInfo.push(event.target.isGoodWithOtherDogs.checked? 'Good with Dogs': 'Not Good With Dogs');
+  arrAdditionalInfo.push(event.target.isGoodWithCats.checked? 'Good with Cats': 'Not Good With Cats');
+  arrAdditionalInfo.push(event.target.isGoodWithKids.checked? 'Good with Kids': 'Not Good With Kids');
+  
+
+  var newPuppy = new Puppy(name, '', breed, staffsay, description, arrAdditionalInfo);
+  newPuppy.generateAge();
+  newPuppy.renderPup();
+  console.log('finished creating form dog');
+}

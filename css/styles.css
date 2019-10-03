@@ -1,6 +1,5 @@
 * {
   margin: 50px 0px 0px 50px;
-  list-style-position: inside;
   background-color: rgb(243, 164, 156);
 }
 
@@ -14,6 +13,14 @@ img {
 
 ul {
   list-style-type: square;
+}
+
+nav {
+  margin: 50px 0px 0px 50px;
+}
+
+input {
+  background-color: white;
 }
 
 .nav li {
@@ -36,3 +43,19 @@ th, td {
 thead, tfoot, th {
   font-weight: bold;
 }
+
+fieldset {
+  border: 1px solid black;
+  margin: 25px 300px 0px 0px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+/* legend {
+  border: 0; /* 1 */
+  /* padding: 0; /* 2 */
+/* } */
