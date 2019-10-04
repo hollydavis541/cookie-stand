@@ -11,18 +11,34 @@
 </head>
 
 <body>
-  <nav>
-    <ul class="nav">
+  <nav class="nav">
+    <ul>
       <li><a href="../index.html">Home</a></li>
       <li><a href="sales.html">Sales</a></li>
     </ul>
   </nav>
   <main>
     <section id='cookiesales'>
-
     </section>
+    <form id="addstore">
+      <fieldset>
+        <legend>Add Location</legend>
+        <label>Location of cookie stand (city name):</label>
+        <input name="city" type="text" />
+        <br>
+        <label>Minimum amount of customers per hour:</label>
+        <input name="mincustomers" type="text" />
+        <br>
+        <label>Maximum amount of cusomter per hour:</label>
+        <input name="maxcustomers" type="text" />
+        <br>
+        <label>Average amount of cookies purchased per customer:</label>
+        <input name="avgcookies" type="text" />
+      </fieldset>
+      <button class="button" type="submit">Submit</button>
+    </form>
   </main>
-  
+
   <script src="../js/app.js"></script>
 </body>
 

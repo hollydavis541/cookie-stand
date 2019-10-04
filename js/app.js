@@ -2,6 +2,14 @@
 
 var storeHoursArray = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
+var storeData = [
+  ['Seattle', 23, 65, 6.3],
+  ['Tokyo', 3, 24, 1.2],
+  ['Dubai', 11, 38, 3.7],
+  ['Paris', 20, 38, 2.3],
+  ['Lima', 2, 16, 4.6]
+];
+
 var Store = function(city, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCust){
   this.city = city;
   this.minHourlyCustomers = minHourlyCustomers;
@@ -107,19 +115,24 @@ Store.prototype.renderSalesData = function(){
 
 renderTableHead();
 
-var seattle = new Store('Seattle', 23, 65, 6.3);
-seattle.renderSalesData();
-
-var tokyo = new Store('Tokyo', 3, 24, 1.2);
-tokyo.renderSalesData();
-
-var dubai = new Store('Dubai', 11, 38, 3.7);
-dubai.renderSalesData();
-
-var paris = new Store('Paris', 20, 38, 2.3);
-paris.renderSalesData();
-
-var lima = new Store('Lima', 2, 16, 4.6);
-lima.renderSalesData();
-
 renderTableFooter();
+
+var storeForm = document.getElementById('addstore');
+storeForm.addEventListener('submit', handleSubmit);
+
+function handleSubmit(e){
+  e.preventDefault();
+  var city = e.target.city.value;
+  var mincustomers = e.target.mincustomers.value;
+  var maxcustomers = e.target.maxcustomers.value;
+  var avgcookies = e.target.avgcookies.value;
+  var newStore = new Store(city, mincustomers, maxcustomers, avgcookies);
+  newStore.renderSalesData();
+}
+
+(function renderAll(data){
+  for(var i = 0; i < data.length; i++){
+    data[i] = new Store(data[i][0], data[i][1],data[i][2],data[i][3]);
+    data[i].renderSalesData();
+  }
+})(storeData);
