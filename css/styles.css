@@ -1,25 +1,58 @@
-body{
+body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
   height: 200px;
   background-color: rgb(243, 164, 156);
+}
 
+h1 {
+  margin: 0px 0px 50px 0px;
 }
 
 #cookielogo {
   float: left;
   width: 200px;
+  margin: 25px 0px 0px 25px;
 }
 
-#buzname {
+#buzname01 {
   font-size: 3em;
   font-family: 'Berkshire Swash', cursive;
   float: left;
-  width: 700px; 
+  width: 700px;
   margin: 25px 500px 0px 25px;
 }
+
+#buzname02 {
+  font-size: 4em;
+  font-family: 'Berkshire Swash', cursive;
+  float: left;
+  width: 700px;
+  margin: 0px 500px 0px 25px;
+}
+
+nav {
+  float: left;
+  width: 700px;
+  margin: 25px 0px 0px 35px;
+  text-decoration: none;
+
+}
+
+.nav li {
+  display: inline;
+  margin: 50px 10px 0px 0px;
+  font-weight: bold;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 
 ul {
   list-style-type: none;
@@ -27,10 +60,6 @@ ul {
 
 input {
   background-color: white;
-}
-
-.nav li {
-  display: inline;
 }
 
 table {
@@ -79,9 +108,33 @@ fieldset {
 h3 {
   font-size: 1.2em;
   font-weight: bold;
+  margin: 0px 0px 5px 0px;
 }
 
 footer {
   height: 200px;
   background-color: rgb(243, 164, 156);
+}
+
+#locations {
+  float: left;
+  width: 450px;
+  margin: 25px 0px 50px 25px;
+  line-height: 1.5em;
+}
+
+#hours {
+  float: left;
+  width: 300px;
+  margin: 25px 0px 50px 0px;
+  line-height: 1.5em;
+
+}
+
+#contact {
+  float: left;
+  width: 300px;
+  margin: 25px 0px 50px 0px;
+  line-height: 1.5em;
+
 }
