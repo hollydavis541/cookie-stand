@@ -8,8 +8,9 @@ header {
   margin: 50px 0px 0px 50px;
 }
 
-h1 {
+#buzname {
   font-size: 2em;
+  font-family: 'Berkshire Swash', cursive;
 }
 
 ul {
