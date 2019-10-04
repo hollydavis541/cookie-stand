@@ -8,7 +8,6 @@ var storeData = [
   ['Dubai', 11, 38, 3.7],
   ['Paris', 20, 38, 2.3],
   ['Lima', 2, 16, 4.6]
-//need to push new store info here so that it stays after refresh
 ];
 
 var Store = function(city, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCust){
@@ -119,7 +118,6 @@ renderTableHead();
 renderTableFooter();
 
 var storeForm = document.getElementById('addstore');
-
 storeForm.addEventListener('submit', handleSubmit);
 
 function handleSubmit(e){
@@ -130,7 +128,6 @@ function handleSubmit(e){
   var avgcookies = e.target.avgcookies.value;
   var newStore = new Store(city, mincustomers, maxcustomers, avgcookies);
   newStore.renderSalesData();
-  console.log('POL');
 }
 
 (function renderAll(data){

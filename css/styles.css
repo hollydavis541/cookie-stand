@@ -1,5 +1,3 @@
-/* Why is the following * selector only working for my sales page? The rest of the selectors work for both pages. */
-
 * {
   margin: 50px 0px 0px 50px;
   background-color: rgb(243, 164, 156);
@@ -18,10 +16,6 @@ ul {
   list-style-type: square;
 }
 
-nav {
-  margin: 50px 0px 0px 50px;
-}
-
 input {
   background-color: white;
 }
@@ -34,16 +28,21 @@ table {
   border-collapse: collapse;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid black;
 }
 
-th, td {
-  text-align: left; 
+th,
+td {
+  text-align: left;
   padding: 10px;
 }
 
-thead, tfoot, th {
+thead,
+tfoot,
+th {
   font-weight: bold;
 }
 
@@ -66,4 +65,9 @@ fieldset {
 .button:hover {
   background-color: white;
   color: gray;
+}
+
+img {
+  float: left;
+  width: 200px;
 }
