@@ -2,7 +2,6 @@
 
 var storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 var locationHourlySales = [];
-
 var locationData = [
   // city min max avg hourly daily
   ['Seattle', 23, 65, 6.3 , [], 0],
@@ -11,7 +10,6 @@ var locationData = [
   ['Paris', 20, 38, 2.3, [], 0],
   ['Lima', 2, 16, 4.6, [], 0]
 ];
-
 // Defining the object constructor (nothing is executing, it's just defining it)
 var Store = function(city, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCust, hourlySales, dailySales){
   // this.city is a variable that will be assigned the value of whatever argument is given for the city parameter when a new Store is instantiated; so when Seattle is instantiated, the value of the variable this.city will become "Seattle"
@@ -127,7 +125,8 @@ Store.prototype.renderSalesData = function(){
   tr.appendChild(th);
   // creates values for columns 2-15
   for(var i = 0; i < storeHours.length; i++){
-    var sales = this.hourlySales;
+    // haha on my last commit I didn't have an "i" below which is why it was rendering the whole array
+    var sales = this.hourlySales[i];
     var td = document.createElement('td');
     td.textContent = sales;
     tr.appendChild(td);
@@ -135,7 +134,7 @@ Store.prototype.renderSalesData = function(){
   // creates values for Daily Total Column
   td = document.createElement('td');
   td.setAttribute('class', 'total');
-  td.textContent = `${this.cookiesPerDay}`;
+  td.textContent = `${this.dailySales}`;
   tr.appendChild(td);
 };
 
