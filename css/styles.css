@@ -11,6 +11,10 @@ h1 {
   margin: 0px 0px 50px 0px;
 }
 
+#cookiesales {
+  align-content: left;
+}
+
 #cookielogo {
   float: left;
   width: 200px;

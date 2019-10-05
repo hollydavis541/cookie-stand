@@ -10,11 +10,15 @@ var storeData = [
   ['Lima', 2, 16, 4.6]
 ];
 
-var Store = function(city, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCust){
+var newArr = [];
+
+var Store = function(city, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCust, hourlySales, dailySales){
   this.city = city;
   this.minHourlyCustomers = minHourlyCustomers;
   this.maxHourlyCustomers = maxHourlyCustomers;
   this.avgCookiesPerCust = avgCookiesPerCust;
+  this.hourlySales = hourlySales;
+  this.calcHourly = dailySales;
 };
 
 Store.prototype.customerRandomizer = function() {
@@ -23,7 +27,7 @@ Store.prototype.customerRandomizer = function() {
 
 Store.prototype.cookiesPerHour = function() {
   var hourlyCookies = [];
-  for (var i = 0; i < 14; i++) {
+  for (var i = 0; i < storeHoursArray.length; i++) {
     hourlyCookies.push(Math.round(this.customerRandomizer() * this.avgCookiesPerCust));
   }
   return hourlyCookies;
@@ -32,7 +36,7 @@ Store.prototype.cookiesPerHour = function() {
 
 Store.prototype.cookiesPerDay = function() {
   var dailyCookies = 0;
-  for (var i = 0; i < 14; i++) {
+  for (var i = 0; i < storeHoursArray.length; i++) {
     dailyCookies += this.cookiesPerHour()[0];
   }
   return dailyCookies.toLocaleString();
@@ -136,3 +140,15 @@ function handleSubmit(e){
     data[i].renderSalesData();
   }
 })(storeData);
+
+
+///////
+//why resetting to zero here?
+// var hourlyTotal = 0;
+// for (i = 0; i < storeHoursArray.length; i++) {
+//   for (j = 0; j < storeHoursArray.length; j++) {
+//     hourlyTotal += Store[j].hourlySales[i];
+//     totalTotal += Store[j].hourlySales
+//   }
+// };
+
