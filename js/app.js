@@ -125,8 +125,20 @@ function handleSubmit(e){
   var mincustomers = e.target.mincustomers.value;
   var maxcustomers = e.target.maxcustomers.value;
   var avgcookies = e.target.avgcookies.value;
-  var newStore = new Store(city, mincustomers, maxcustomers, avgcookies);
+  var newStore = new Store(city, mincustomers, maxcustomers, avgcookies, hourly, daily);
+  newStore.customerRandomizer();
+  newStore.cookiesPerHour();
+  newStore.cookiesPerDay();
+  var hourly = e.target.hourly.value;
+  var daily = e.target.daily.value;
   newStore.renderSalesData();
+  removeFooter();
+  renderTableFooter();
+}
+
+function removeFooter() {
+  var table = document.getElementById('table');
+  table.deleteTFoot();
 }
 
 (function renderAll(data){
