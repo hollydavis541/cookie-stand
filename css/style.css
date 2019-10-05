@@ -1,65 +1,164 @@
+/* outline: 1px dotted black */
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
-  height: 200px;
+  outline: 1px dotted black;
   background-color: rgb(243, 164, 156);
 }
 
-h1 {
-  margin: 0px 0px 50px 0px;
-}
-
-#cookiesales {
-  align-content: left;
+#logoandname {
+  outline: 1px dotted black;
 }
 
 #cookielogo {
-  float: left;
+  outline: 1px dotted black;
   width: 200px;
-  margin: 25px 0px 0px 25px;
+  margin: 50px 0px 0px 50px;
 }
 
-#buzname01 {
+#bizname {
+  outline: 1px dotted black;
+  width: 500px;
+  margin: 50px 0px 0px 50px;
+}
+
+#bizname01 {
+  /* outline: 1px dotted black; */
+  font-family: 'Berkshire Swash', cursive;
   font-size: 3em;
-  font-family: 'Berkshire Swash', cursive;
-  float: left;
-  width: 700px;
-  margin: 25px 500px 0px 25px;
 }
 
-#buzname02 {
-  font-size: 4em;
+#bizname02 {
+  /* outline: 1px dotted black; */
   font-family: 'Berkshire Swash', cursive;
-  float: left;
-  width: 700px;
-  margin: 0px 500px 0px 25px;
+  font-size: 4em;
 }
 
 nav {
-  float: left;
-  width: 700px;
-  margin: 25px 0px 0px 35px;
+  outline: 1px dotted black;
+  padding: 50px 0px 25px 50px;
   text-decoration: none;
+}
 
+ul {
+  outline: 1px dotted black;
+  list-style-type: none;
+  width: 500px;
 }
 
 .nav li {
+  outline: 1px dotted black;
   display: inline;
   margin: 50px 10px 0px 0px;
   font-weight: bold;
-  color: black;
+  color: darkslategray;
 }
 
 a {
+  outline: 1px dotted black;
   text-decoration: none;
-  color: black;
+  color: darkslategray;
 }
 
+main {
+  outline: 1px dotted black;
+}
 
-ul {
-  list-style-type: none;
+h2 {
+  outline: 1px dotted black;
+  margin: 25px 0px 15px 50px;
+}
+
+p {
+  outline: 1px dotted black;
+  margin: 0px 0px 0px 50px;
+  padding-bottom: 25px;
+}
+
+#teepic {
+  border: 5px solid black;
+  margin: 0px 0px 0px 50px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.3);
+}
+
+footer {
+  outline: 1px dotted black;
+  background-color: rgb(243, 164, 156);
+}
+
+#section-footer {
+  outline: 1px dotted black;
+}
+
+#div-locations {
+  outline: 1px dotted black;
+  width: 500px;
+}
+
+#h3-locations {
+  outline: 1px dotted black;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0px 0px 10px 50px;
+  padding-top: 25px;
+  width: 450px;
+}
+
+#ul-locations {
+  outline: 1px dotted black;
+  margin: 0px 0px 50px 50px;
+  width: 450px;
+  line-height: 1.5em;
+}
+
+#div-hours {
+  outline: 1px dotted black;
+  width: 350px;
+}
+
+#h3-hours {
+  outline: 1px dotted black;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0px 0px 10px 50px;
+  padding-top: 25px;
+  width: 300px;
+}
+
+#ul-hours {
+  outline: 1px dotted black;
+  margin: 0px 0px 50px 50px;
+  width: 300px;
+  line-height: 1.5em;
+}
+
+#div-contact {
+  outline: 1px dotted black;
+  width: 350px;
+}
+
+#h3-contact {
+  outline: 1px dotted black;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0px 0px 10px 50px;
+  padding-top: 25px;
+  width: 300px;
+}
+#ul-contact {
+  outline: 1px dotted black;
+  margin: 0px 0px 50px 50px;
+  width: 300px;
+  line-height: 1.5em;
+}
+
+/* SALES PAGE */
+
+#cookiesales {
+  align-content: left;
 }
 
 input {
@@ -70,21 +169,16 @@ table {
   border-collapse: collapse;
 }
 
-table,
-th,
-td {
+table, th, td {
   border: 1px solid black;
 }
 
-th,
-td {
+th, td {
   text-align: left;
   padding: 10px;
 }
 
-thead,
-tfoot,
-th {
+thead, tfoot, th {
   font-weight: bold;
 }
 
@@ -107,38 +201,4 @@ fieldset {
 .button:hover {
   background-color: white;
   color: gray;
-}
-
-h3 {
-  font-size: 1.2em;
-  font-weight: bold;
-  margin: 0px 0px 5px 0px;
-}
-
-footer {
-  height: 200px;
-  background-color: rgb(243, 164, 156);
-}
-
-#locations {
-  float: left;
-  width: 450px;
-  margin: 25px 0px 50px 25px;
-  line-height: 1.5em;
-}
-
-#hours {
-  float: left;
-  width: 300px;
-  margin: 25px 0px 50px 0px;
-  line-height: 1.5em;
-
-}
-
-#contact {
-  float: left;
-  width: 300px;
-  margin: 25px 0px 50px 0px;
-  line-height: 1.5em;
-
 }
