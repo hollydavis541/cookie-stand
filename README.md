@@ -4,8 +4,8 @@ _A site promoting Pat’s Salmon Cookies, delicious frosted salmon-shaped cookie
 
 **Deployed Site:** https://optimistic-panini-60a576.netlify.com/
 
-Lab 10 - Refinement
-Lab 09 - Images
-Lab 08 - Forms
-Lab 07 - Object Constructors
-Lab 06 - Object Literals
+- Lab 10 - Refinement
+- Lab 09 - Images
+- Lab 08 - Forms
+- Lab 07 - Object Constructors
+- Lab 06 - Object Literals
