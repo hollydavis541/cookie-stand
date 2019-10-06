@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="./css/reset.css">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:500,500i,600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -21,7 +22,7 @@
       </div>
     </div>
     <nav class="nav">
-      <ul>
+      <ul id="ul-nav">
         <li><a href="index.html">Home</a></li>
         <li><a href=""></a>Our Story</li>
         <li><a href=""></a>Order Online</li>
@@ -29,38 +30,39 @@
         <li><a href=""></a>Contact Us</li>
       </ul>
     </nav>
+    <hr id="hr-header">
   </header>
   <main>
-    <section class="welcome">
-      <h2>Delicous Frosted Fish!</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna aliqua. Lorem donec massa sapien faucibus. Massa placerat duis ultricies lacus. At volutpat diam ut
-      venenatis tellus in metus. Posuere sollicitudin aliquam ultrices sagittis orci. Imperdiet massa tincidunt nunc
-      pulvinar sapien et. Interdum velit euismod in pellentesque massa placerat. Laoreet suspendisse interdum
-      consectetur libero id faucibus nisl tincidunt eget. Nunc non blandit massa enim nec dui nunc mattis. Vitae
-      suscipit tellus mauris a diam maecenas sed enim.</p>
+    <section id="welcome">
+      <img id="family" src="./img/family.jpg" alt="happy family with milk and cookies">
+      <h2>Delicous Frosted Salmon-Shaped Cookies!</h2>
+      <p id="p-welcome">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore
+        magna aliqua. Lorem donec massa sapien faucibus. Massa placerat duis ultricies lacus. At volutpat diam ut
+        venenatis tellus in metus. Posuere sollicitudin aliquam ultrices sagittis orci. Imperdiet massa tincidunt nunc
+        pulvinar sapien et. Interdum velit euismod in pellentesque massa placerat. Laoreet suspendisse interdum
+        consectetur libero id faucibus nisl tincidunt eget. Nunc non blandit massa enim nec dui nunc mattis. Vitae
+        suscipit tellus mauris a diam maecenas sed enim.</p>
     </section>
+    <div id="fishrule">
+    </div>
     <section class="giveaway">
-      <img src="./img/shirtandcutter.jpg" alt="person wearing t-shirt with graphic of two intertwined salmon" id="teepic">
+      <img src="./img/shirtandcutter.jpg" alt="person wearing t-shirt with graphic of two intertwined salmon"
+        id="teepic">
       <h2>T-Shirt Giveaway!</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna aliqua. Lorem donec massa sapien faucibus. Massa placerat duis ultricies lacus. At volutpat diam ut
-      venenatis tellus in metus. Posuere sollicitudin aliquam ultrices sagittis orci. Imperdiet massa tincidunt nunc
-      pulvinar sapien et.</p>
+      <p id="p-giveaway">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore
+        magna aliqua. Lorem donec massa sapien faucibus. Massa placerat duis ultricies lacus. At volutpat diam ut
+        venenatis tellus in metus. Posuere sollicitudin aliquam ultrices sagittis orci. Imperdiet massa tincidunt nunc
+        pulvinar sapien et.</p>
     </section>
-
-    <!-- <section>
-      <img src="./img/chinook.png" alt="chinook salmon">
-      <img src="./img/family.jpg" alt="happy family with milk and cookies">
-      <img src="./img/fish.jpg" alt="school of brightly-colored fish">
-      <img src="./img/salmon.png" alt="salmon">
-    </section> -->
   </main>
   <footer>
+    <hr id=hr-footer>
     <section id="section-footer">
       <div id="div-locations">
         <h3 id="h3-locations">Locations</h3>
-        <ul id="ul-locations">
+        <ul id="ul-locations" class="ul-footer">
           <li>Seattle | 567 N 39th St, Seattle, WA 98103</li>
           <li>Tokyo | 14 Chome-1-2 Ginza, Chuo City, Tokyo 123-0001</li>
           <li>Dubai | PO Box 12345, Dubai, United Arab Emirates</li>
@@ -70,19 +72,21 @@
       </div>
       <div id="div-hours">
         <h3 id="h3-hours">Hours</h3>
-        <ul id="ul-hours">
+        <ul id="ul-hours" class="ul-footer">
           <li>Monday-Saturday: 6am to 7pm</li>
           <li><em>closed on Sundays</em></li>
         </ul>
       </div>
       <div id="div-contact">
         <h3 id="h3-contact">Contact</h3>
-        <ul id="ul-contact">
+        <ul id="ul-contact" class="ul-footer">
           <li>Call to Order! 800-555-5555</li>
           <li>Email us at info@salmoncookies.com</li>
         </ul>
       </div>
+      <img id="img-school" src="./img/fish.jpg" alt="school of brightly-colored fish">
     </section>
+    <p id="copyright">&copy 2019 Optimistic Panini Designs</p>
   </footer>
 </body>
 
