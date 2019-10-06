@@ -101,15 +101,12 @@ Store.prototype.renderSalesData = function(){
   var th = document.createElement('th');
   th.textContent = `${this.city}`;
   tr.appendChild(th);
-  // creates values for columns 2-15
   for(var i = 0; i < storeHours.length; i++){
-    // haha on my last commit I didn't have an "i" below which is why it was rendering the whole array
     var sales = this.hourlySales[i];
     var td = document.createElement('td');
     td.textContent = sales;
     tr.appendChild(td);
   }
-  // creates values for Daily Total Column
   td = document.createElement('td');
   td.setAttribute('class', 'total');
   td.textContent = `${this.dailySales}`;
