@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" type="text/css" href="./css/reset.css">
-  <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:500,500i,600&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header>
-    <img src="./img/cookielogo.png" alt="frosted salmon cookie" id="cookielogo">
-    <h1 id="buzname01">Pat's World-Famous</h1>
-    <h1 id="buzname02">Salmon Cookies</h1>
+    <div class="logoandname">
+      <img src="./img/salmon.png" alt="salmon logo" id="logoimg">
+      <div id="bizname">
+        <h1 id="bizname01">Pa<span id="kerning01">t<span id="kerning02">’s</span></span></h1>
+        <h1 id="bizname02">Salmon Cookies</h1>
+      </div>
+    </div>
     <nav class="nav">
-      <ul id="nav">
+      <ul id="ul-nav">
         <li><a href="index.html">Home</a></li>
         <li><a href=""></a>Our Story</li>
         <li><a href=""></a>Order Online</li>
@@ -23,23 +30,49 @@
         <li><a href=""></a>Contact Us</li>
       </ul>
     </nav>
+    <hr id="hr-header">
   </header>
   <main>
-    <h1>Delicous Frosted Fish!</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem donec massa sapien faucibus. Massa placerat duis ultricies lacus. At volutpat diam ut venenatis tellus in metus. Posuere sollicitudin aliquam ultrices sagittis orci. Imperdiet massa tincidunt nunc pulvinar sapien et. Interdum velit euismod in pellentesque massa placerat. Laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Nunc non blandit massa enim nec dui nunc mattis. Vitae suscipit tellus mauris a diam maecenas sed enim.</p>
-    <section>
-      <img src="./img/chinook.png" alt="chinook salmon">
-      <img src="./img/family.jpg" alt="happy family with milk and cookies">
-      <img src="./img/fish.jpg" alt="school of brightly-colored fish">
-      <img src="./img/salmon.png" alt="salmon">
-      <img src="./img/shirtandcutter.jpg" alt="person wearing t-shirt with graphic of two intertwined salmon">
+    <section id="welcome">
+      <img id="family" src="./img/family.jpg" alt="happy family with milk and cookies">
+      <h2>Delicious Salmon-Shaped Cookies!</h2>
+      <p id="p-welcome">These mouth-watering frosted salmon-shaped cookies are a celebration of our zero-legged,
+        high-jumping fish friends. Enjoy Pat's Salmon Cookies with coffee, tea, or milk!
+      </p>
+      <ul id="ul-welcome">
+        <li>Work team facing a rough deadline? Boost morale with a box of Pat's Salmon Cookies!</li>
+        <li>Hosting a party? Delight your guests with a tray of our colorful salmon cookies!</li>
+        <li>Need a sweet treat to go with your coffee? Yep, you guessed it, stop by Pat's Salmon Cookies!</li>
+      </ul>
+    </section>
+    <div id="fishrule">
+    </div>
+    <section id="div-giveaway">
+      <img src="./img/shirtandcutter.jpg" alt="person wearing t-shirt with graphic of two intertwined salmon"
+        id="teepic">
+      <h2>T-Shirt Giveaway!</h2>
+      <p id="p-giveaway">Show off your salmon love! Stop by any of our locations during the month of October to enter
+        our drawing to win this awesome twin-salmon t-shirt (designed by local artist Sal Mon) and your very own salmon
+        cookie cutter!
+        <br>
+        <br>
+        Visit our flagship Seattle location or any of our international <a class="a-main"
+          href="#section-footer">locations</a>. And don't forget, 5% of every cookie purchase goes to <a class="a-main"
+          href="https://www.wildsalmon.org/">salmon conservation</a> in the Pacific Northwest!
+        <br>
+        <br>
+        <p id="disclaimer">*No purchase necessary. Current employees are not eligible. There will be 5 winners per
+          store. We will draw names on November 1st, call to notify you, and ship your prize that same week (or you can
+          come by to pick it up if you prefer).</p>
+      </p>
     </section>
   </main>
   <footer>
-    <section>
-      <div id="locations">
-        <h3>Locations</h3>
-        <ul>
+    <hr id="hr-footer">
+    <section id="section-footer">
+      <div id="div-locations">
+        <h3 id="h3-locations">Locations</h3>
+        <ul id="ul-locations" class="ul-footer">
           <li>Seattle | 567 N 39th St, Seattle, WA 98103</li>
           <li>Tokyo | 14 Chome-1-2 Ginza, Chuo City, Tokyo 123-0001</li>
           <li>Dubai | PO Box 12345, Dubai, United Arab Emirates</li>
@@ -47,21 +80,28 @@
           <li>Lima | Av Jose Larco 654, Miraflores 15074, Peru</li>
         </ul>
       </div>
-      <div id="hours">
-        <h3>Hours</h3>
-        <ul>
+      <div id="div-hours">
+        <h3 id="h3-hours">Hours</h3>
+        <ul id="ul-hours" class="ul-footer">
           <li>Monday-Saturday: 6am to 7pm</li>
           <li><em>closed on Sundays</em></li>
         </ul>
       </div>
-      <div id="contact">
-        <h3>Contact</h3>
-        <ul>
-          <li>Call to Order! 800-555-5555</li>
-          <li>Email us at info@salmoncookies.com</li>
+      <div id="div-contact">
+        <h3 id="h3-contact">Contact</h3>
+        <ul id="ul-contact" class="ul-footer">
+          <li>800-555-5555 - Call to Order!</li>
+          <li><a href="http://">info@salmoncookies.com</a></li>
+          <li id="socialmedia"><img class="socialmedia" src="./img/fbicon.png" alt="facebook"> <img class="socialmedia"
+              src="./img/igicon.png" alt="instagram"></li>
         </ul>
       </div>
+      <img id="img-school" src="./img/fish.jpg" alt="school of brightly-colored fish">
     </section>
+    <div id="div-copyright">
+      <p id="p-copyright">&copy 2019 Optimistic Panini Designs</p>
+    </div>
   </footer>
 </body>
+
 </html>
