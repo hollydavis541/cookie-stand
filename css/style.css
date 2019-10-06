@@ -13,11 +13,14 @@ header {
 #logoimg {
   margin: 35px 25px 0px 200px;
   position: absolute;
-  width: 250px;
 }
 
-#kerning {
-  font-size: .7em; 
+#kerning01 {
+letter-spacing: 2px;
+}
+
+#kerning02 {
+  letter-spacing: -5px;
 }
 
 #bizname {
@@ -29,7 +32,7 @@ header {
 }
 
 #bizname01 {
-  margin: 0px 0px 5px 25px;
+  margin: 0px 0px 5px 30px;
   font-size: 3.2em;
 }
 
@@ -62,6 +65,11 @@ a {
   color: black;
 }
 
+.a-main {
+  color: #487231;
+  font-weight: bold;
+}
+
 #hr-header {
   border: .5px solid black;
 }
@@ -71,7 +79,7 @@ a {
 }
 
 #family {
-  margin: 0px 50px 0px 50px;
+  margin: 0px 50px 0px 20px;
   float: right;
   border: 5px solid #487231;
 }
@@ -86,19 +94,28 @@ h2 {
 
 p {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 1.2em;
-  line-height: 1.3em;
+  font-size: 1.1em;
+  line-height: 1.4em;
   color: black;
+  padding-left: 50px;
 }
 
 #p-welcome {
-  margin: 0px 0px 0px 50px;
+  width: 600px;
+}
+
+#ul-welcome li {
+  list-style-image: url("../img/chinook.png");
+  margin-left: 130px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.1em;
+  line-height: 1.4em;
 }
 
 #fishrule {
   width: auto;
   height: 100px;
-  margin: 0px 50px 50px 50px;
+  margin: 0px 50px 25px 50px;
   background-image: url("../img/fishpattern.png"); 
 }
 
@@ -108,9 +125,18 @@ p {
   float: left;
 }
 
+#div-giveaway {
+  margin-bottom: 50px; 
+  height: 325px;
+}
+
 #p-giveaway {
-    padding: 0px 50px 0px 50px;
-    height: 324px;
+    padding: 0px 50px 25px 50px;
+}
+
+#disclaimer {
+  font-size: .8em;
+  margin-right: 50px;
 }
 
 footer {
@@ -164,7 +190,6 @@ h3, legend {
 }
 
 #div-contact { 
-  width: 300px;
   float: left;
 }
 
@@ -178,10 +203,15 @@ h3, legend {
   line-height: 1.5em;
 }
 
+#socialmedia img {
+  margin: 10px 5px 0px 0px;
+  opacity: .5;
+}
+
 #img-school {
   border: 10px solid white;
-  margin: 25px 50px 0px 0px;
-  float: right;
+  margin: 25px 50px 0px 50px;
+  position: absolute;
 }
 
 #div-copyright {
