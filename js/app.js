@@ -125,12 +125,9 @@ function handleSubmit(e){
   var mincustomers = e.target.mincustomers.value;
   var maxcustomers = e.target.maxcustomers.value;
   var avgcookies = e.target.avgcookies.value;
-  var newStore = new Store(city, mincustomers, maxcustomers, avgcookies, hourly, daily);
-  newStore.customerRandomizer();
+  var newStore = new Store(city, mincustomers, maxcustomers, avgcookies, [], 0);
   newStore.cookiesPerHour();
   newStore.cookiesPerDay();
-  var hourly = e.target.hourly.value;
-  var daily = e.target.daily.value;
   newStore.renderSalesData();
   removeFooter();
   renderTableFooter();

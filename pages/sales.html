@@ -9,7 +9,7 @@
   <link rel="stylesheet" type="text/css" href="../css/reset.css">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:500,500i,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:500,600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -41,7 +41,7 @@
         <legend>Add Location</legend>
         <label>Location of cookie stand (city name):</label>
         <br>
-        <input name="city" type="text" required />
+        <input name="city" type="text" pattern="[a-zA-Z]{1,25}" required />
         <br>
         <label>Minimum amount of customers per hour:</label>
         <br>

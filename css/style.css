@@ -100,10 +100,6 @@ p {
   padding-left: 50px;
 }
 
-#p-welcome {
-  width: 600px;
-}
-
 #ul-welcome li {
   list-style-image: url("../img/chinook.png");
   margin-left: 130px;
@@ -276,10 +272,17 @@ label {
 
 input {
   background-color: white;
-  border: 1px solid black;
   font-size: 1em;
   border-radius: 5px;
   padding: 5px;
+}
+
+input:invalid {
+  border: 1px dashed black;
+}
+
+input:valid {
+  border: 1px solid black;
 }
 
 .button {
