@@ -100,10 +100,6 @@ p {
   padding-left: 50px;
 }
 
-#p-welcome {
-  width: 600px;
-}
-
 #ul-welcome li {
   list-style-image: url("../img/chinook.png");
   margin-left: 130px;
