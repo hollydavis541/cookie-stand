@@ -41,11 +41,11 @@ $(document).ready(() => {
   };
 
   function renderTableHeader() {
-    $('#cookiesales').append('<table></table>');
+    $('#cookiesales').append('<table>');
     $('table').attr('id', 'table'); // remove once refactoring complete
-    $('table').append('<thead></thead>');
-    $('thead').append('<tr></tr>');
-    $('tr').append('<th></th>');
+    $('table').append('<thead>');
+    $('thead').append('<tr>');
+    $('tr').append('<th>');
     storeHours.forEach(el => {
       $('tr').append(`<th>${el}</th>`);
     });
@@ -53,8 +53,8 @@ $(document).ready(() => {
   }
 
   function renderTableFooter() {
-    $('table').append('<tfoot></tfoot>');
-    $('tfoot').append('<tr></tr>');
+    $('table').append('<tfoot>');
+    $('tfoot').append('<tr>');
     $('tfoot tr').attr('id', 'totals');
     $('tfoot tr').append('<td>Hourly Total</td>');
 
@@ -71,26 +71,17 @@ $(document).ready(() => {
   }
 
   Store.prototype.renderSalesData = function(){
-    var table = document.getElementById('table');
-    var tr = document.createElement('tr');
-    table.appendChild(tr);
-    var th = document.createElement('th');
-    th.textContent = `${this.city}`;
-    tr.appendChild(th);
+    $('tbody').append('<tr>');
+    $('tbody tr').append(`<th>${this.city}</th>`);
     for(var i = 0; i < storeHours.length; i++){
       var sales = this.hourlySales[i];
-      var td = document.createElement('td');
-      td.textContent = sales;
-      tr.appendChild(td);
+      $('tbody tr').append(`<td>${sales}</td>`);
     }
-    td = document.createElement('td');
-    td.setAttribute('class', 'total');
-    td.textContent = `${this.dailySales}`;
-    tr.appendChild(td);
+    $('tbody tr').append(`<td>${this.dailySales}</td>`);
+    $('tbody tr td').attr('class', 'total');
   };
 
-  var storeForm = document.getElementById('addstore');
-  storeForm.addEventListener('submit', handleSubmit);
+  $('#addstore').on('submit', handleSubmit);
 
   function handleSubmit(e){
     e.preventDefault();
@@ -107,12 +98,12 @@ $(document).ready(() => {
   }
 
   function removeFooter() {
-    var table = document.getElementById('table');
-    table.deleteTFoot();
+    $('tfoot').remove();
   }
 
   (function renderAll(data){
     renderTableHeader();
+    $('table').append('<tbody>');
     for(var i = 0; i < data.length; i++){
       data[i] = new Store(data[i][0], data[i][1], data[i][2], data[i][3], data[i][4], data[i][5]);
       data[i].cookiesPerHour();
@@ -124,22 +115,3 @@ $(document).ready(() => {
 
 });
 
-// $(document).ready(() => {
-//   // Creates Table Header
-//   $('#cookiesales').append('<table></table>');
-//   $('table').append('<thead></thead>');
-//   $('thead').append('<tr></tr>');
-//   $('tr').append('<th></th>');
-//   storeHours.forEach(el => {
-//     $('tr').append(`<th>${el}</th>`);
-//   });
-//   $('tr').append('<th>Daily Total</th>');
-
-//   // Creates Table Body
-//   // $('table').append('<tbody></tbody>');
-//   // locationData.forEach(el => {
-//   //   $('tbody').append('<tr></tr>');
-//   //   $('tbody tr').append(`<th>${el[0]}</th>`);
-
-//   // });
-// });
