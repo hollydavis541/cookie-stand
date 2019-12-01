@@ -80,7 +80,7 @@ $(document).ready(() => {
     $('tbody tr').append(`<td>${this.dailySales}</td>`);
     $('tbody tr td').attr('class', 'total');
   };
-
+ 
   $('#addstore').on('submit', handleSubmit);
 
   function handleSubmit(e){
