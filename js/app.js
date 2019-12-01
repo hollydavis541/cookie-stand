@@ -19,7 +19,11 @@ $(document).ready(() => {
     this.avgCookiesPerCust = avgCookiesPerCust;
     this.hourlySales = hourlySales;
     this.dailySales = dailySales;
+    Store.data.push(this);
   };
+
+  // Array of properties from constructor above
+  Store.data = [];
 
   Store.prototype.customerRandomizer = function() {
     return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers + 1) + this.minHourlyCustomers);
@@ -80,7 +84,7 @@ $(document).ready(() => {
     $('tbody tr').append(`<td>${this.dailySales}</td>`);
     $('tbody tr td').attr('class', 'total');
   };
- 
+
   $('#addstore').on('submit', handleSubmit);
 
   function handleSubmit(e){
@@ -95,10 +99,157 @@ $(document).ready(() => {
     newStore.renderSalesData();
     removeFooter();
     renderTableFooter();
+    makeChart();
   }
 
   function removeFooter() {
     $('tfoot').remove();
+  }
+
+  // Chart Generator
+  var genLabels = function(images) {
+    var labelsArr = [];
+    for (var i=0; i < images.length; i++){
+      labelsArr.push(images[i].city);
+    }
+    return labelsArr;
+  };
+
+  var genData01 = function(images) {
+    var dataArr = [];
+    for (var i=0; i < images.length; i++){
+      dataArr.push(images[i].clicks);
+    }
+    return dataArr;
+  };
+
+  var genData02 = function(images) {
+    var dataArr = [];
+    for (var i=0; i < images.length; i++){
+      dataArr.push(images[i].timesShown);
+    }
+    return dataArr;
+  };
+
+  function makeChart(){
+
+    var ctx = document.getElementById('canvas-chart').getContext('2d');
+    var productChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: genLabels(Store.data),
+        datasets: [{
+          label: 'Votes',
+          data: genData01(Store.data),
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.7)',
+            'rgba(54, 162, 235, 0.7)',
+            'rgba(255, 206, 86, 0.7)',
+            'rgba(75, 192, 192, 0.7)',
+            'rgba(153, 102, 255, 0.7)',
+            'rgba(255, 99, 132, 0.7)',
+            'rgba(54, 162, 235, 0.7)',
+            'rgba(255, 206, 86, 0.7)',
+            'rgba(75, 192, 192, 0.7)',
+            'rgba(153, 102, 255, 0.7)',
+            'rgba(255, 99, 132, 0.7)',
+            'rgba(54, 162, 235, 0.7)',
+            'rgba(255, 206, 86, 0.7)',
+            'rgba(75, 192, 192, 0.7)',
+            'rgba(153, 102, 255, 0.7)',
+            'rgba(255, 99, 132, 0.7)',
+            'rgba(54, 162, 235, 0.7)',
+            'rgba(255, 206, 86, 0.7)',
+            'rgba(75, 192, 192, 0.7)',
+            'rgba(153, 102, 255, 0.7)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)'
+          ],
+          borderWidth: 1
+        },
+        {
+          label: 'Appearances',
+          data: genData02(Store.data),
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 206, 86, 0.4)',
+            'rgba(75, 192, 192, 0.4)',
+            'rgba(153, 102, 255, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 206, 86, 0.4)',
+            'rgba(75, 192, 192, 0.4)',
+            'rgba(153, 102, 255, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 206, 86, 0.4)',
+            'rgba(75, 192, 192, 0.4)',
+            'rgba(153, 102, 255, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 206, 86, 0.4)',
+            'rgba(75, 192, 192, 0.4)',
+            'rgba(153, 102, 255, 0.4)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)'
+          ],
+          borderWidth: 1
+        }
+        ],
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true,
+              // Found stepSize info at https://www.chartjs.org/docs/latest/axes/cartesian/linear.html
+              stepSize: 1
+            }
+          }]
+        }
+      }
+    });
   }
 
   (function renderAll(data){
@@ -111,7 +262,8 @@ $(document).ready(() => {
       data[i].renderSalesData();
     }
     renderTableFooter();
+    console.log(Store.data);
+    makeChart();
   })(locationData);
 
 });
-
