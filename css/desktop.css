@@ -1,0 +1,26 @@
+/* MAIN */
+#family, #teepic {
+  width: 25%;
+}
+
+/* SALES */
+table {
+  width: 70%;
+}
+
+th, td {
+  text-align: left;
+  padding: 7px;
+  color: #DCDCDC;
+  font-size: 1em;
+}
+
+#div-chart {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#div-bar {
+  width: 70%;
+  margin: 0 auto;
+}

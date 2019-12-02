@@ -1,0 +1,22 @@
+/* MAIN */
+#family, #teepic {
+  width: 60%;
+}
+
+/* FOOTER */
+footer {
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.div-footer {
+  margin-right: 30px;
+}
+
+#socialmedia {
+  margin-left: 0px;
+}
+
+#schoolandcopy {
+  margin-top: 20px;
+}
