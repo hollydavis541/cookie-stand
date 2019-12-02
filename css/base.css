@@ -1,0 +1,12 @@
+nav li, h2, h3, .ul-footer li, legend, button, #copyright {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+td, th, label, input {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h3, legend {  
+  font-weight: 600;
+  font-size: 1em;
+}
