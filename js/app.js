@@ -47,6 +47,7 @@ $(document).ready(() => {
   function renderTableHeader() {
     $('#cookiesales').append('<table>');
     $('table').append('<thead>');
+    $('table').attr('id', 'table');
     $('thead').append('<tr>');
     $('tr').append('<th>');
     storeHours.forEach(el => {
@@ -73,15 +74,34 @@ $(document).ready(() => {
     $('tfoot tr').append(`<td>${columnTotal}</td>`);
   }
 
+  // Store.prototype.renderSalesData = function(){
+  //   $('tbody').append('<tr>');
+  //   $('tbody tr').append(`<th>${this.city}</th>`);
+  //   for(let i = 0; i < storeHours.length; i++){
+  //     let sales = this.hourlySales[i];
+  //     $('tbody tr').append(`<td>${sales}</td>`);
+  //   }
+  //   $('tbody tr').append(`<td>${this.dailySales}</td>`);
+  //   $('tbody tr td').attr('class', 'total');
+  // };
+
   Store.prototype.renderSalesData = function(){
-    $('tbody').append('<tr>');
-    $('tbody tr').append(`<th>${this.city}</th>`);
-    for(let i = 0; i < storeHours.length; i++){
-      let sales = this.hourlySales[i];
-      $('tbody tr').append(`<td>${sales}</td>`);
+    var table = document.getElementById('table');
+    var tr = document.createElement('tr');
+    table.appendChild(tr);
+    var th = document.createElement('th');
+    th.textContent = `${this.city}`;
+    tr.appendChild(th);
+    for(var i = 0; i < storeHours.length; i++){
+      var sales = this.hourlySales[i];
+      var td = document.createElement('td');
+      td.textContent = sales;
+      tr.appendChild(td);
     }
-    $('tbody tr').append(`<td>${this.dailySales}</td>`);
-    $('tbody tr td').attr('class', 'total');
+    td = document.createElement('td');
+    td.setAttribute('class', 'total');
+    td.textContent = `${this.dailySales}`;
+    tr.appendChild(td);
   };
 
   $('#addstore').on('submit', handleSubmit);
