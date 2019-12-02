@@ -52,7 +52,6 @@ a {
   color: black;
 }
 
-
 /* MAIN */
 main {
   margin: 0 auto;
@@ -67,20 +66,25 @@ main {
 }
 
 #welcome {
-  height: 350px;
+  display: flex;
+  flex-flow: column;
 }
 
-#family {
-  margin: 0px 50px 0px 20px;
-  float: right;
+#div-giveaway {
+  display: flex;
+  flex-flow: column;
+}
+
+#family, #teepic {
   border: 5px solid #487231;
+  width: 90%;
+  margin: 0 auto;
 }
 
 h2 {
-  margin: 25px 0px 15px 50px;
   padding-top: 15px;
   color: #487231;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 600;
 }
 
@@ -90,45 +94,37 @@ h3 {
 
 p {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 1.1em;
-  line-height: 1.4em;
+  font-size: 1em;
+  line-height: 1.2em;
   color: black;
-  padding-left: 50px;
+  padding-top: 15px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+#ul-welcome {
+  width: 90%;
+  margin: 0 auto;
 }
 
 #ul-welcome li {
   list-style-image: url("../img/chinook.png");
-  margin-left: 130px;
+  margin-left: 100px;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 1.1em;
-  line-height: 1.4em;
+  font-size: 1em;
+  line-height: 1.2em;
+  text-align: left;
 }
 
 #fishrule {
   width: auto;
   height: 100px;
-  margin: 0px 50px 25px 50px;
+  margin: 20px 0px;
   background-image: url("../img/fishpattern.png"); 
-}
-
-#teepic {
-  margin: 0px 50px 0px 50px;
-  border: 5px solid #487231;
-  float: left;
-}
-
-#div-giveaway {
-  margin-bottom: 50px; 
-  height: 325px;
-}
-
-#p-giveaway {
-    padding: 0px 50px 25px 50px;
 }
 
 #disclaimer {
   font-size: .8em;
-  margin-right: 50px;
 }
 
 /* FOOTER */
@@ -173,20 +169,11 @@ footer {
 
 
 /* SALES PAGE */
-
-#cookiesales {
-  /* align-content: left; */
-  /* margin: 25px 50px 25px 50px; */
-  /* margin: 2%; */
-}
-
 #h3-sales {
-  /* margin: 0px 0px 25px 0px;  */
   color: #487231;
 }
 
 .h3-chart {
-  /* margin-left: 50px; */
   color: #487231;
 }
 
